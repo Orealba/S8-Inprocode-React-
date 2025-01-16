@@ -5,8 +5,8 @@ export const Welcome = () => {
   return (
     <>
       <div>
-        <Header />
         <Navbar />
+        <Header />
       </div>
     </>
   );
