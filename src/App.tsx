@@ -6,6 +6,7 @@ import { Mapa } from './Pages/Mapa';
 import { Calendario } from './Pages/Calendario';
 import { Grafico } from './Pages/Grafico';
 
+
 function App() {
   return (
     <>

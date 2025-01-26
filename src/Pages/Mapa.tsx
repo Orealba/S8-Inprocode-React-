@@ -1,5 +1,10 @@
-import React from 'react';
+
+import { MiMapa } from '../Components/MiMapa';
 
 export const Mapa = () => {
-  return <div>AQUI VA EL Mapa</div>;
+  return (
+    <>
+      <MiMapa />
+    </>
+  );
 };
