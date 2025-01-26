@@ -8,7 +8,7 @@ import { Carousel } from 'flowbite-react';
 export const Header = () => {
   return (
     <>
-      <div className="fixed inset-0">
+      <div className="fixed inset-0 mt-16">
         <Carousel
           pauseOnHover
           slideInterval={5000}
