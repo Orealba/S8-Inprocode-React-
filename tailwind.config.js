@@ -2,7 +2,11 @@
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './node_modules/flowbite/**/*.js'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ['KGPictureYou', 'sans-serif'],
+      },
+    },
   },
   plugins: [require('flowbite/plugin')],
 };

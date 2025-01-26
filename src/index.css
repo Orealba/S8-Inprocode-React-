@@ -1,11 +1,14 @@
+@import 'flowbite';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'flowbite';
 
 :root {
-  
   background-color: #242424;
-
-
+}
+@font-face {
+  font-family: 'KGPictureYou';
+  src: url('./assets/fonts/KGPictureYou.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
