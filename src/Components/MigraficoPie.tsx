@@ -1,18 +1,24 @@
-import { Tooltip } from 'flowbite-react';
-import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
+import {
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+  Legend,
+} from 'recharts';
 
-const data2 = [
-  { age: 25, sport: 'Fútbol' },
-  { age: 22, sport: 'Vóleibol' },
-  { age: 30, sport: 'Baloncesto' },
-  { age: 28, sport: 'Tenis' },
-  { age: 19, sport: 'Natación' },
-  { age: 27, sport: 'Atletismo' },
-  { age: 24, sport: 'Ciclismo' },
-  { age: 21, sport: 'Gimnasia' },
-  { age: 29, sport: 'Béisbol' },
-  { age: 26, sport: 'Rugby' },
-];
+interface Props {
+  datos: Record<string, Usuario[]>;
+}
+
+const transformarDato = (datos: Record<string, Usuario[]>) => {
+  console.log(datos);
+  return Object.entries(datos).map(([deporte, usuarios]) => ({
+    sport: deporte,
+    value: usuarios.filter((usuario) => usuario.nombre !== null).length,
+  }));
+};
+
 const colores = [
   '#FF0000', // Rojo
   '#0000FF', // Azul
@@ -25,8 +31,13 @@ const colores = [
   '#808080', // Gris
   '#00FFFF', // Cian
 ];
-
-export const MigraficoPie = () => {
+interface Usuario {
+  nombre: string;
+  apellido: string;
+  edad: number;
+}
+export const MigraficoPie = ({ datos }: Props) => {
+  const data2 = transformarDato(datos);
   return (
     <>
       <div>
@@ -36,10 +47,13 @@ export const MigraficoPie = () => {
         <ResponsiveContainer>
           <PieChart>
             <Pie
-              dataKey={'age'}
+              dataKey={'value'}
               data={data2}
+              nameKey="sport"
               innerRadius={20}
               outerRadius={250}
+              label={(entry) => entry.nombre}
+              labelLine={true}
               fill="#82ca9d">
               {data2.map((_, index) => (
                 <Cell
@@ -47,7 +61,8 @@ export const MigraficoPie = () => {
                   fill={colores[index % colores.length]}></Cell>
               ))}
             </Pie>
-            <Tooltip />
+            <Tooltip formatter={(value) => [`${value} usuarios`]} />
+            <Legend />
           </PieChart>
         </ResponsiveContainer>
       </div>
