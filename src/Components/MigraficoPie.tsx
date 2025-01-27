@@ -30,16 +30,16 @@ export const MigraficoPie = () => {
   return (
     <>
       <div>
-        <h1 className="m-8 ">Gráfico 2</h1>
+        <h1 className="m-8 font-['KGPictureYou'] text-3xl">Gráfico 2</h1>
       </div>
-      <div style={{ width: '100%', height: 500 }}>
+      <div style={{ width: '100%', height: 600 }}>
         <ResponsiveContainer>
           <PieChart>
             <Pie
               dataKey={'age'}
               data={data2}
-              innerRadius={60}
-              outerRadius={85}
+              innerRadius={20}
+              outerRadius={250}
               fill="#82ca9d">
               {data2.map((_, index) => (
                 <Cell

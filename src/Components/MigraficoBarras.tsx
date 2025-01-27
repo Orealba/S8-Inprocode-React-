@@ -26,7 +26,7 @@ export const MigraficoBarras = () => {
   return (
     <>
       <div>
-        <h1 className="m-8 ">Gráfico 1</h1>
+        <h1 className="m-8 font-['KGPictureYou'] text-3xl">Gráfico 1</h1>
       </div>
       <div className="flex justify-center">
         <ResponsiveContainer
