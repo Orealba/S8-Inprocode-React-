@@ -19,7 +19,7 @@ export const MiCalendario = () => {
         <h1 className="m-8 font-['KGPictureYou'] text-3xl">
           Calendario eventos deportivos
         </h1>
-        <div className="flex justify-center mb-5 h-[95vh] w-[100%]">
+        <div className="flex justify-center mb-5 h-[25rem] w-[100%]">
           <Calendar
             localizer={localizer}
             events={events}
