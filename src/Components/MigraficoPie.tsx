@@ -30,6 +30,16 @@ const colores = [
   '#A52A2A', // Marrón
   '#808080', // Gris
   '#00FFFF', // Cian
+  '#FF1493', // Rosa Profundo
+  '#4B0082', // Índigo
+  '#32CD32', // Verde Lima
+  '#FF4500', // Naranja Rojizo
+  '#9400D3', // Violeta Oscuro
+  '#00FF7F', // Verde Primavera
+  '#1E90FF', // Azul Dodger
+  '#FF8C00', // Naranja Oscuro
+  '#8B4513', // Marrón Silla
+  '#4682B4', // Azul Acero
 ];
 interface Usuario {
   nombre: string;

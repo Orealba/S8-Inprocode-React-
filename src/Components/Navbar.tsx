@@ -1,6 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
+  const location = useLocation();
+
+  const getLinkClass = (path: string) => {
+    const baseClass =
+      'block py-2 px-3 text-white rounded text-sm md:text-base cursor-pointer';
+    return location.pathname === path
+      ? `${baseClass} border-b-2 border-white`
+      : baseClass;
+  };
+
   return (
     <>
       <div className="flex justify-center">
@@ -13,28 +23,28 @@ export const Navbar = () => {
                 <li className="w-auto">
                   <Link
                     to="/"
-                    className="block py-2 px-3 text-white rounded text-sm md:text-base cursor-pointer">
+                    className={getLinkClass('/')}>
                     Home
                   </Link>
                 </li>
                 <li className="w-auto">
                   <Link
                     to="/mapa"
-                    className="block py-2 px-3 text-white rounded text-sm md:text-base cursor-pointer">
+                    className={getLinkClass('/mapa')}>
                     Mapa
                   </Link>
                 </li>
                 <li className="w-auto">
                   <Link
                     to="/calendario"
-                    className="block py-2 px-3 text-white rounded text-sm md:text-base cursor-pointer">
+                    className={getLinkClass('/calendario')}>
                     FullCalendar
                   </Link>
                 </li>
                 <li className="w-auto">
                   <Link
                     to="/grafico"
-                    className="block py-2 px-3 text-white rounded text-sm md:text-base cursor-pointer">
+                    className={getLinkClass('/grafico')}>
                     Gráficos
                   </Link>
                 </li>
