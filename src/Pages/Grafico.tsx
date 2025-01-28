@@ -41,8 +41,8 @@ export const Grafico = () => {
 
   return (
     <>
-      <div className=" text-white">
-        {/* <MigraficoBarras datos={usuariosPorDeporte} /> */}
+      <div className="  text-white m-4">
+        <MigraficoBarras datos={usuariosPorDeporte} />
         <MigraficoPie datos={usuariosPorDeporte} />
       </div>
       ;

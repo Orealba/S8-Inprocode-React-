@@ -51,20 +51,25 @@ export const MigraficoPie = ({ datos }: Props) => {
   return (
     <>
       <div>
-        <h1 className="m-8 font-['KGPictureYou'] text-3xl">Gráfico 2</h1>
+        <h1 className="m-8 font-['KGPictureYou'] text-3xl ">Gráfico 2</h1>
       </div>
-      <div style={{ width: '100%', height: 600 }}>
+      <div
+        style={{ width: '100%', height: 500 }}
+        className="mt-8">
         <ResponsiveContainer>
           <PieChart>
             <Pie
-              dataKey={'value'}
               data={data2}
+              dataKey="value"
               nameKey="sport"
-              innerRadius={20}
-              outerRadius={250}
-              label={(entry) => entry.nombre}
-              labelLine={true}
-              fill="#82ca9d">
+              cx="50%"
+              cy="50%"
+              innerRadius={30}
+              outerRadius={
+                window.matchMedia('(max-width: 768px)').matches ? 100 : 200
+              }
+              label={(entry) => entry.sport}
+              labelLine={true}>
               {data2.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}
