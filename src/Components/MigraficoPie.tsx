@@ -51,7 +51,9 @@ export const MigraficoPie = ({ datos }: Props) => {
   return (
     <>
       <div>
-        <h1 className="m-8 font-['KGPictureYou'] text-3xl ">Gráfico 2</h1>
+        <h1 className="m-8 font-['KGPictureYou'] text-3xl ">
+          Usuarios que practican un deporte
+        </h1>
       </div>
       <div
         style={{ width: '100%', height: 500 }}
@@ -65,11 +67,9 @@ export const MigraficoPie = ({ datos }: Props) => {
               cx="50%"
               cy="50%"
               innerRadius={30}
-              outerRadius={
-                window.matchMedia('(max-width: 768px)').matches ? 100 : 200
-              }
-              label={(entry) => entry.sport}
-              labelLine={true}>
+              outerRadius={window.innerWidth < 768 ? 120 : 200}
+              label={false}
+              labelLine={false}>
               {data2.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}

@@ -29,7 +29,7 @@ export const Grafico = () => {
           const datosUsuarios = await respUsuarios.json();
           usuariosTemp[deporte.nombre] = datosUsuarios.usuarios;
         }
-        console.log(usuariosTemp);
+
         setUsuariosPorDeporte(usuariosTemp);
       } catch (error) {
         console.error('Error al obtener datos:', error);
