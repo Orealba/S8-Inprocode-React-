@@ -9,6 +9,18 @@ import {
   YAxis,
 } from 'recharts';
 
+interface Usuario {
+  id?: number;
+  nombre: string;
+  apellido: string;
+  email: string;
+  telefono: string;
+  direccion: string;
+  latitud: string;
+  longitud: string;
+  edad: string;
+}
+
 interface Props {
   datos: Record<string, Usuario[]>;
 }
@@ -59,7 +71,7 @@ export const MigraficoBarras = ({ datos }: Props) => {
             <Bar
               dataKey="promedioEdad"
               fill="#8884d8"
-              name="Promedio de Edad"
+              name="Deportes"
               label={{ position: 'top' }}
               radius={[5, 5, 0, 0]}
             />

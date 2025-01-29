@@ -5,6 +5,7 @@ import {
   Popup,
   ZoomControl,
 } from 'react-leaflet';
+import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -29,6 +30,16 @@ interface Props {
 }
 
 export const MiMapa = ({ usuarios }: Props) => {
+  // Agrupar usuarios por coordenadas
+  const usuariosPorUbicacion = usuarios.reduce((acc, usuario) => {
+    const key = `${usuario.latitud},${usuario.longitud}`;
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(usuario);
+    return acc;
+  }, {} as Record<string, typeof usuarios>);
+
   return (
     <MapContainer
       center={[40.416775, -3.70379]}
@@ -41,22 +52,37 @@ export const MiMapa = ({ usuarios }: Props) => {
       />
       <ZoomControl position="bottomright" />
 
-      {usuarios &&
-        usuarios.length > 0 &&
-        usuarios.map((usuario, index) => (
-          <Marker
-            key={index}
-            position={[usuario.latitud, usuario.longitud]}
-            icon={defaultIcon}>
-            <Popup>
-              <div className="text-center">
-                <h3 className="font-bold">{usuario.nombre}</h3>
-                <p>Lat: {usuario.latitud}</p>
-                <p>Lng: {usuario.longitud}</p>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+      <MarkerClusterGroup>
+        {Object.entries(usuariosPorUbicacion).map(
+          ([coords, usuariosEnUbicacion]) => {
+            const [lat, lng] = coords.split(',').map(Number);
+            return (
+              <Marker
+                key={coords}
+                position={[lat, lng]}
+                icon={defaultIcon}>
+                <Popup>
+                  <div className="text-center">
+                    <h3 className="font-bold">Usuarios en esta ubicación:</h3>
+                    {usuariosEnUbicacion.map((usuario, index) => (
+                      <div
+                        key={index}
+                        className="mt-2">
+                        <p className="font-semibold">{usuario.nombre}</p>
+                      </div>
+                    ))}
+                    <p className="mt-2">
+                      Lat: {lat}
+                      <br />
+                      Lng: {lng}
+                    </p>
+                  </div>
+                </Popup>
+              </Marker>
+            );
+          },
+        )}
+      </MarkerClusterGroup>
     </MapContainer>
   );
 };

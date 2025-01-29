@@ -12,7 +12,7 @@ interface Props {
 }
 
 const transformarDato = (datos: Record<string, Usuario[]>) => {
-  console.log(datos);
+  
   return Object.entries(datos).map(([deporte, usuarios]) => ({
     sport: deporte,
     value: usuarios.filter((usuario) => usuario.nombre !== null).length,

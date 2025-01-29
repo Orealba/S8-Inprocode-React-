@@ -32,6 +32,9 @@ export const Mapa = () => {
       <div className="flex justify-center h-[400px] w-full sm:w-[500px] md:w-[600px] lg:w-[800px] mx-auto bg-white rounded-lg shadow-lg">
         <MiMapa usuarios={usuarios} />
       </div>
+      <h3 className="fle">
+        Aleja o acerca el mapa para ver a todos los usuarios de la tabla
+      </h3>
     </div>
   );
 };
