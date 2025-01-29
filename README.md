@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
+# Sports Dashboard - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Descripción del Proyecto
 
-Currently, two official plugins are available:
+Este proyecto es la parte frontend de una aplicación deportiva que se conecta con una API propia y una base de datos en Supabase. La aplicación permite gestionar usuarios y sus actividades deportivas a través de diferentes funcionalidades interactivas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Características Principales
 
-## Expanding the ESLint configuration
+### 🏠 Página de Bienvenida
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Carousel deportivo interactivo
+- Diseño moderno y atractivo
 
-- Configure the top-level `parserOptions` property like this:
+### 🗺️ Mapa Interactivo
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Integración con Mapbox
+- Visualización de ubicaciones de usuarios
+- Marcadores interactivos que muestran información de usuarios al pasar el cursor
+- Agrupación de usuarios por ubicación
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 📅 Calendario de Eventos
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Implementado con Big Calendar de Google
+- Funcionalidades CRUD para eventos
+- Gestión de eventos con título, fecha y hora de inicio/fin
+- Tooltips informativos al pasar el cursor sobre eventos
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### 📊 Visualización de Datos
+
+- Gráfico de barras: Distribución de edad por deporte
+- Gráfico circular: Distribución de usuarios por deporte
+- Implementado con Recharts
+- Visualización dinámica de datos
+
+### 👥 Gestión de Usuarios
+
+- CRUD completo de usuarios
+- Conexión en tiempo real con base de datos Supabase
+- Interfaz intuitiva para gestión de datos
+
+## 🛠️ Tecnologías Utilizadas
+
+- React.js
+- Tailwind CSS
+- Flowbite
+- CSS puro
+- Mapbox
+- Big Calendar
+- Recharts
+- Supabase
+
+## 📱 Diseño Responsive
+
+- Adaptable a todos los dispositivos
+- Interfaz fluida y accesible
+- Experiencia de usuario optimizada
+
+## 🔗 Conexión con Backend
+
+- API propia personalizada
+- Integración completa con base de datos Supabase
+- Gestión eficiente de datos
+
+## 🚀 Instalación y Uso
+
+Clonar el repositorio
+git clone [URL_DEL_REPOSITORIO]
+Instalar dependencias
+npm install
+Iniciar la aplicación
+npm start
