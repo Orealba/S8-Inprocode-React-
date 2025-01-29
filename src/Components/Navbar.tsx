@@ -48,6 +48,13 @@ export const Navbar = () => {
                     Gráficos
                   </Link>
                 </li>
+                <li className="w-auto">
+                  <Link
+                    to="/usuarios"
+                    className={getLinkClass('/usuarios')}>
+                    Usuarios
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

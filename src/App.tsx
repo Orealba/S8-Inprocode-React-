@@ -5,7 +5,7 @@ import { Welcome } from './Pages/Welcome';
 import { Mapa } from './Pages/Mapa';
 import { Calendario } from './Pages/Calendario';
 import { Grafico } from './Pages/Grafico';
-
+import { Usuarios } from './Pages/Usuarios';
 
 function App() {
   return (
@@ -28,6 +28,11 @@ function App() {
           <Route
             path="/calendario"
             element={<Calendario />}
+          />
+
+          <Route
+            path="/usuarios"
+            element={<Usuarios />}
           />
         </Routes>
       </Router>
