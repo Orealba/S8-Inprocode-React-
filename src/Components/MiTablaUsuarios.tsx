@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Table, Button } from 'flowbite-react';
+import AgregarUsuario from './AgregarUsuario';
 
 interface Usuario {
   id: number;
@@ -14,6 +15,7 @@ interface Usuario {
 export default function MiTablaUsuarios() {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [mostrarModalAgregar, setMostrarModalAgregar] = useState(false);
 
   useEffect(() => {
     obtenerUsuarios();
@@ -33,10 +35,10 @@ export default function MiTablaUsuarios() {
 
   const eliminarUsuario = async (id: number) => {
     try {
-      await fetch(`TU_URL_API/usuarios/${id}`, {
+      await fetch(`http://127.0.0.1:8080/usuarios/${id}`, {
         method: 'DELETE',
       });
-      obtenerUsuarios(); 
+      obtenerUsuarios();
     } catch (error) {
       console.error('Error al eliminar usuario:', error);
     }
@@ -51,7 +53,7 @@ export default function MiTablaUsuarios() {
           </h2>
           <Button
             color="success"
-            onClick={() => (window.location.href = '/agregar-usuario')}>
+            onClick={() => setMostrarModalAgregar(true)}>
             Agregar Usuario
           </Button>
         </div>
@@ -101,6 +103,16 @@ export default function MiTablaUsuarios() {
             </Table.Body>
           </Table>
         </div>
+
+        {mostrarModalAgregar && (
+          <AgregarUsuario
+            onClose={() => setMostrarModalAgregar(false)}
+            onUsuarioCreado={() => {
+              obtenerUsuarios();
+              setMostrarModalAgregar(false);
+            }}
+          />
+        )}
       </div>
     </div>
   );

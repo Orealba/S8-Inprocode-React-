@@ -1,4 +1,4 @@
-# Sports Dashboard - Frontend
+# S8. Inprocode - Frontend
 
 ## 📋 Descripción del Proyecto
 
@@ -13,10 +13,10 @@ Este proyecto es la parte frontend de una aplicación deportiva que se conecta c
 
 ### 🗺️ Mapa Interactivo
 
-- Integración con Mapbox
+- Integración con OpenStreetMap usando React Leaflet
 - Visualización de ubicaciones de usuarios
 - Marcadores interactivos que muestran información de usuarios al pasar el cursor
-- Agrupación de usuarios por ubicación
+- Agrupación de usuarios por ubicación usando react-leaflet-cluster
 
 ### 📅 Calendario de Eventos
 
@@ -41,10 +41,12 @@ Este proyecto es la parte frontend de una aplicación deportiva que se conecta c
 ## 🛠️ Tecnologías Utilizadas
 
 - React.js
+- Typescript
 - Tailwind CSS
 - Flowbite
-- CSS puro
-- Mapbox
+- CSS
+- React Leaflet
+- OpenStreetMap
 - Big Calendar
 - Recharts
 - Supabase
@@ -63,9 +65,14 @@ Este proyecto es la parte frontend de una aplicación deportiva que se conecta c
 
 ## 🚀 Instalación y Uso
 
-Clonar el repositorio
-git clone [URL_DEL_REPOSITORIO]
-Instalar dependencias
-npm install
-Iniciar la aplicación
-npm start
+- Clonar el repositorio:
+  git clone https://github.com/Orealba/S8-Inprocode-React-
+- Instalar dependencias:
+  npm install
+- Iniciar la aplicación:
+  npm start dev
+
+## 📝 Notas Adicionales
+
+Este proyecto forma parte de un sistema más amplio que incluye un backend separado. Asegúrate de tener ambas partes configuradas correctamente para un funcionamiento óptimo.
+https://github.com/Orealba/S8-Inprocode-React-Backend

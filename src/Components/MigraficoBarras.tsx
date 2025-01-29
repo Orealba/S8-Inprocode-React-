@@ -18,7 +18,7 @@ interface Usuario {
   direccion: string;
   latitud: string;
   longitud: string;
-  edad: string;
+  edad: number;
 }
 
 interface Props {
@@ -38,7 +38,7 @@ export const MigraficoBarras = ({ datos }: Props) => {
           : 0;
       return {
         nombre: deporte,
-        promedioEdad: Math.round(promedio), 
+        promedioEdad: Math.round(promedio),
       };
     },
   );

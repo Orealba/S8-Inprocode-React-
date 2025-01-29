@@ -33,7 +33,7 @@ export const Mapa = () => {
         <MiMapa usuarios={usuarios} />
       </div>
       <h3 className="flex justify-center text-white m-2">
-        Aleja o acerca el mapa para ver a todos los usuarios de la tabla
+        Aleja el mapa para ver a todos los usuarios de la tabla
       </h3>
     </div>
   );

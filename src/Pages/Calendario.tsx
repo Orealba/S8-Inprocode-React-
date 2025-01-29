@@ -8,8 +8,8 @@ export const Calendario = () => {
       </h1>
 
       <MiCalendario></MiCalendario>
-      <h3 className="flex justify-center text-white">
-        Agrega un evento clickeando en el día
+      <h3 className="flex justify-center text-white m-3 ">
+        Agrega un evento clickeando en el día o con el botón de +
       </h3>
     </div>
   );

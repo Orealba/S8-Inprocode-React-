@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, Label, TextInput } from 'flowbite-react';
 
 interface Usuario {

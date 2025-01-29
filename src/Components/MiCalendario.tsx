@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { useState, useEffect } from 'react';
 import { EventoModal } from './EventoModal';
 import { EventosService } from './EventosService';
-import './Calendar.css';
+import './Css/Calendar.css';
 
 const localizer = dayjsLocalizer(dayjs);
 
@@ -61,12 +61,6 @@ export const MiCalendario = () => {
     }
   };
 
-  const formatEventTooltip = (event: any) => {
-    return `Título: ${event.titulo}
-Inicio: ${dayjs(event.fecha_inicio).format('DD/MM/YYYY HH:mm')}
-Fin: ${dayjs(event.fecha_fin).format('DD/MM/YYYY HH:mm')}`;
-  };
-
   const EventComponent = ({ event }: any) => {
     const tooltip = `Título: ${event.titulo}
 Inicio: ${dayjs(event.fecha_inicio).format('DD/MM/YYYY HH:mm')}
@@ -87,7 +81,7 @@ Fin: ${dayjs(event.fecha_fin).format('DD/MM/YYYY HH:mm')}`;
 
   return (
     <>
-      <div className="p-4">
+      <div className="p-4 relative">
         <div className="flex justify-center mb-5 h-[700px] w-[85%] mx-auto">
           <Calendar
             localizer={localizer}
@@ -96,8 +90,8 @@ Fin: ${dayjs(event.fecha_fin).format('DD/MM/YYYY HH:mm')}`;
             endAccessor="fecha_fin"
             titleAccessor="titulo"
             className="custom-calendar w-full"
-            views={['month', 'week', 'day']}
             defaultView="month"
+            views={['month']}
             components={{
               event: EventComponent,
             }}
@@ -123,7 +117,31 @@ Fin: ${dayjs(event.fecha_fin).format('DD/MM/YYYY HH:mm')}`;
           />
         </div>
 
-        {/* Modal de Acciones */}
+        {/* Botón flotante para agregar evento */}
+        <button
+          onClick={() => {
+            setEventoSeleccionado({
+              fecha_inicio: new Date(),
+              fecha_fin: new Date(),
+            });
+            setModalAbierto(true);
+          }}
+          className="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 ease-in-out z-50">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+        </button>
+
         {modalAccionesAbierto && (
           <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
             <div className="bg-black p-6 rounded-lg w-96 text-white border border-gray-600 shadow-xl">
