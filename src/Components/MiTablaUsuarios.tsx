@@ -36,7 +36,7 @@ export default function MiTablaUsuarios() {
       await fetch(`TU_URL_API/usuarios/${id}`, {
         method: 'DELETE',
       });
-      obtenerUsuarios(); // Recargar la lista
+      obtenerUsuarios(); 
     } catch (error) {
       console.error('Error al eliminar usuario:', error);
     }

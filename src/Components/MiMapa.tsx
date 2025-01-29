@@ -9,7 +9,7 @@ import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Arregla el problema del icono por defecto
+
 const defaultIcon = L.icon({
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
   iconRetinaUrl:
@@ -30,7 +30,7 @@ interface Props {
 }
 
 export const MiMapa = ({ usuarios }: Props) => {
-  // Agrupar usuarios por coordenadas
+
   const usuariosPorUbicacion = usuarios.reduce((acc, usuario) => {
     const key = `${usuario.latitud},${usuario.longitud}`;
     if (!acc[key]) {

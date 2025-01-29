@@ -20,26 +20,26 @@ const transformarDato = (datos: Record<string, Usuario[]>) => {
 };
 
 const colores = [
-  '#FF0000', // Rojo
-  '#0000FF', // Azul
-  '#008000', // Verde
-  '#FFFF00', // Amarillo
-  '#800080', // Morado
-  '#FFA500', // Naranja
-  '#FFC0CB', // Rosa
-  '#A52A2A', // Marrón
-  '#808080', // Gris
-  '#00FFFF', // Cian
-  '#FF1493', // Rosa Profundo
-  '#4B0082', // Índigo
-  '#32CD32', // Verde Lima
-  '#FF4500', // Naranja Rojizo
-  '#9400D3', // Violeta Oscuro
-  '#00FF7F', // Verde Primavera
-  '#1E90FF', // Azul Dodger
-  '#FF8C00', // Naranja Oscuro
-  '#8B4513', // Marrón Silla
-  '#4682B4', // Azul Acero
+  '#FF0000', 
+  '#0000FF', 
+  '#008000', 
+  '#FFFF00', 
+  '#800080', 
+  '#FFA500',
+  '#FFC0CB', 
+  '#A52A2A', 
+  '#808080', 
+  '#00FFFF', 
+  '#FF1493',
+  '#4B0082', 
+  '#32CD32', 
+  '#FF4500', 
+  '#9400D3', 
+  '#00FF7F', 
+  '#1E90FF', 
+  '#FF8C00',
+  '#8B4513',
+  '#4682B4', 
 ];
 interface Usuario {
   nombre: string;

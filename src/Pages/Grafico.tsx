@@ -16,11 +16,11 @@ export const Grafico = () => {
   useEffect(() => {
     const obtenerDatos = async () => {
       try {
-        // Obtener todos los deportes
+        
         const respDeportes = await fetch('http://127.0.0.1:8080/deportes');
         const datosDeportes = await respDeportes.json();
 
-        // Obtener usuarios para cada deporte
+        
         const usuariosTemp: Record<string, Usuario[]> = {};
         for (const deporte of datosDeportes) {
           const respUsuarios = await fetch(

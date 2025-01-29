@@ -38,7 +38,7 @@ export const MigraficoBarras = ({ datos }: Props) => {
           : 0;
       return {
         nombre: deporte,
-        promedioEdad: Math.round(promedio), // Redondeamos el promedio
+        promedioEdad: Math.round(promedio), 
       };
     },
   );
