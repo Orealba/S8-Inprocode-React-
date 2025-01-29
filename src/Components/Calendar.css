@@ -1,0 +1,18 @@
+.custom-calendar .rbc-event {
+  background-color: #3174ad;
+  color: white;
+}
+
+.custom-calendar .rbc-event:hover {
+  background-color: #265985;
+}
+
+/* Eliminar cualquier pseudo-elemento que pueda estar causando el rectángulo negro */
+.custom-calendar .rbc-event::before,
+.custom-calendar .rbc-event::after {
+  display: none !important;
+}
+
+.custom-calendar .rbc-event-content {
+  color: white;
+}

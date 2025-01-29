@@ -26,13 +26,13 @@ export const Mapa = () => {
 
   return (
     <div className="p-4">
-      <h1 className=" m-8 text-white font-['KGPictureYou'] text-3xl">
+      <h1 className="m-8 text-white font-['KGPictureYou'] text-3xl">
         Locaciones de los usuarios
       </h1>
       <div className="flex justify-center h-[400px] w-full sm:w-[500px] md:w-[600px] lg:w-[800px] mx-auto bg-white rounded-lg shadow-lg">
         <MiMapa usuarios={usuarios} />
       </div>
-      <h3 className="fle">
+      <h3 className="flex justify-center text-white m-2">
         Aleja o acerca el mapa para ver a todos los usuarios de la tabla
       </h3>
     </div>

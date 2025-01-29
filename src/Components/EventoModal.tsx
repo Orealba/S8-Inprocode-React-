@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 
 interface EventoModalProps {
@@ -6,6 +6,7 @@ interface EventoModalProps {
   onClose: () => void;
   onSubmit: (evento: Partial<Evento>) => void;
   eventoInicial: Partial<Evento>;
+  modoEdicion?: boolean;
 }
 
 interface Evento {
@@ -20,13 +21,17 @@ export const EventoModal = ({
   onClose,
   onSubmit,
   eventoInicial,
+  modoEdicion = false,
 }: EventoModalProps) => {
   const [evento, setEvento] = useState<Partial<Evento>>(eventoInicial);
+
+  useEffect(() => {
+    setEvento(eventoInicial);
+  }, [eventoInicial]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (evento.titulo && evento.fecha_inicio && evento.fecha_fin) {
-      console.log('Enviando evento:', evento);
       onSubmit(evento);
     }
   };
@@ -36,7 +41,9 @@ export const EventoModal = ({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
       <div className="bg-black p-6 rounded-lg w-96 text-white border border-gray-600 shadow-xl">
-        <h2 className="text-xl mb-4 font-bold">Crear Nuevo Evento</h2>
+        <h2 className="text-xl mb-4 font-bold">
+          {modoEdicion ? 'Modificar Evento' : 'Crear Nuevo Evento'}
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block mb-2 font-semibold">Título:</label>
@@ -94,7 +101,7 @@ export const EventoModal = ({
             <button
               type="submit"
               className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-              Guardar
+              {modoEdicion ? 'Guardar cambios' : 'Crear'}
             </button>
           </div>
         </form>
